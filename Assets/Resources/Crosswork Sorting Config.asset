@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc20f1cf11d640e4c882310e1a51ef15, type: 3}
+  m_Name: Crosswork Sorting Config
+  m_EditorClassIdentifier: 
+  layers:
+  - Name: Default
+    Id: 566222361
+    SortingLayer:
+      Id: 0
+  - Name: Cell
+    Id: -490736947
+    SortingLayer:
+      Id: 43196099
+  - Name: Element
+    Id: -1835960449
+    SortingLayer:
+      Id: 863674835
+  - Name: Element Swap Top
+    Id: 1985015188
+    SortingLayer:
+      Id: -558358433
+  - Name: Effects
+    Id: -838883170
+    SortingLayer:
+      Id: -1842576145

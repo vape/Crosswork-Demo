@@ -1,0 +1,17 @@
+{
+    "name": "Crosswork.Demo",
+    "rootNamespace": "",
+    "references": [
+        "GUID:fe1856ec4139e60478fe7825b2312438",
+        "GUID:8e58bd4122422094d9265b0e6515741c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,3 @@
+[submodule "Packages/deszz.crosswork"]
+	path = Packages/deszz.crosswork
+	url = https://github.com/vape/Crosswork.git

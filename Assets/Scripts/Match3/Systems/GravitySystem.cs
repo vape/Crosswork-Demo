@@ -2,8 +2,7 @@
 using Crosswork.Demo.Match3.Elements;
 using Crosswork.Demo.Tweens;
 using Crosswork.View;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using System.Collections;
 using UnityEngine;
 
 namespace Crosswork.Demo.Match3.Systems
@@ -96,7 +95,7 @@ namespace Crosswork.Demo.Match3.Systems
 
                 if (board.CanMoveElement(element, targetX, targetY))
                 {
-                    DropAsync(upBucket.Elements[i], fromX, fromY, targetX, targetY);
+                    view.StartCoroutine(DropRoutine(upBucket.Elements[i], fromX, fromY, targetX, targetY));
                 }
 
                 break;
@@ -105,7 +104,7 @@ namespace Crosswork.Demo.Match3.Systems
             return false;
         }
 
-        private async void DropAsync(Element element, int fromX, int fromY, int toX, int toY)
+        private IEnumerator DropRoutine(Element element, int fromX, int fromY, int toX, int toY)
         {
             const float duration = 0.1f;
 
@@ -116,7 +115,7 @@ namespace Crosswork.Demo.Match3.Systems
             var elementView = view.GetView(element);
             elementView.transform.TweenMove(view.GridToWorldPosition(toX, toY), duration).Play();
 
-            await Task.Delay((int)(1000 * duration / Time.timeScale) + 1);
+            yield return new WaitForSeconds(duration);
 
             board.UnlockCell(fromCellLock);
             board.UnlockCell(toCellLock);

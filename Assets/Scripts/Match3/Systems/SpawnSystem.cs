@@ -3,6 +3,7 @@ using Crosswork.Demo.Match3.Elements;
 using Crosswork.Demo.Tweens;
 using Crosswork.View;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -85,13 +86,13 @@ namespace Crosswork.Demo.Match3.Systems
 
                 if (board.TryCreateElement(nextElement, p, out var createdElement))
                 {
-                    SpawnAsync(createdElement);
+                    view.StartCoroutine(SpawnRoutine(createdElement));
                     GenerateNextElement();
                 }
             }
         }
 
-        private async void SpawnAsync(Element element)
+        private IEnumerator SpawnRoutine(Element element)
         {
             const float duration = 0.1f;
 
@@ -106,7 +107,7 @@ namespace Crosswork.Demo.Match3.Systems
             elementView.transform.TweenLocalMove(view.GridToWorldPosition(cell), duration).Play();
             elementView.transform.TweenScale(Vector3.one, duration).Play();
 
-            await Task.Delay((int)(duration * 1000 / Time.timeScale));
+            yield return new WaitForSeconds(duration);
 
             board.UnlockElement(@lock);
         }

@@ -47,7 +47,7 @@ TagManager:
   - name: Element
     uniqueID: 863674835
     locked: 0
-  - name: Element Swap Top
+  - name: Element Overlay
     uniqueID: 3736608863
     locked: 0
   - name: Effects

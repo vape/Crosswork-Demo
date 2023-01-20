@@ -16,6 +16,17 @@ namespace Crosswork.Demo.Match3
 
         private void Start()
         {
+            Load();
+        }
+
+        public void Restart()
+        {
+            board.Unload();
+            Load();
+        }
+
+        private void Load()
+        {
             var matching = new MatchingSystem();
             var swapping = new SwappingSystem(matching);
             var gravity = new GravitySystem();

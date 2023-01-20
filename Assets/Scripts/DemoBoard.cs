@@ -50,6 +50,17 @@ namespace Crosswork.Demo
             }
         }
 
+        public void Unload()
+        {
+            for (int i = 0; i < systems.Length; ++i)
+            {
+                systems[i].Unload();
+            }
+
+            systems = null;
+            board.Unload();
+        }
+
         private void Update()
         {
             if (!board.Loaded)

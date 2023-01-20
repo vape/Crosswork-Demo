@@ -18,6 +18,17 @@ namespace Crosswork.Demo.Merge
 
         private void Start()
         {
+            Load();
+        }
+
+        public void Restart()
+        {
+            board.Unload();
+            Load();
+        }
+
+        private void Load()
+        {
             generator = new GeneratorSystem();
 
             var merging = new MergingSystem();
